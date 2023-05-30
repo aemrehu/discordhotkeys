@@ -4,9 +4,9 @@ Usage from command line: python hotkeys.py pathtosettingsfile
 
 Settings file must be .toml and follow this syntax:
 
-\[url]
-URL = "https...."
+    [url]
+    URL = "https...."
 
-\[header]
-"authorization" = "AUTHCODE"
-"content-type" = "application/json"
+    [header]
+    "authorization" = "AUTHCODE"
+    "content-type" = "application/json"
