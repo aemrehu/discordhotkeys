@@ -19,6 +19,9 @@ skip = {
 summon = {
     "content": "m!summon"
 }
+foff = {
+    "content": "m!fuck off"
+}
 
 def on_activate_pause():
     requests.post(URL, json=pause, headers=header, timeout=TIMEOUT)
@@ -36,6 +39,10 @@ def on_activate_summon():
     requests.post(URL, json=summon, headers=header, timeout=TIMEOUT)
     print("SUMMON")
 
+def on_activate_fuckoff():
+    requests.post(URL, json=foff, headers=header, timeout=TIMEOUT)
+    print("FUCKOFF")
+
 if __name__ == "__main__":
     try:
         with open(sys.argv[1], "rb") as file:
@@ -48,8 +55,9 @@ if __name__ == "__main__":
         raise Exception("Please provide proper settings.toml file.")
 
     with keyboard.GlobalHotKeys({
-        '<alt_gr>+p': on_activate_pause,
-        '<alt_gr>+o': on_activate_resume,
-        '<alt_gr>+i': on_activate_skip,
-        '<alt_gr>+å': on_activate_summon
+        '<alt_gr>+<shift>+p': on_activate_pause,
+        '<alt_gr>+<shift>+o': on_activate_resume,
+        '<alt_gr>+<shift>+i': on_activate_skip,
+        '<alt_gr>+<shift>+å': on_activate_summon,
+        '<alt_gr>+<shift>+<esc>': on_activate_fuckoff
     }) as h: h.join()
