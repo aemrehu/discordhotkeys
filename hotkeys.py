@@ -1,10 +1,10 @@
-from pynput import keyboard
-import requests
 import sys
+import requests
 import tomli
+from pynput import keyboard
 
+TIMEOUT = 10
 URL = ""
-
 header = {}
 
 resume = {
@@ -21,19 +21,19 @@ summon = {
 }
 
 def on_activate_pause():
-    requests.post(URL, json=pause, headers=header)
+    requests.post(URL, json=pause, headers=header, timeout=TIMEOUT)
     print("PAUSE")
 
 def on_activate_resume():
-    requests.post(URL, json=resume, headers=header)
+    requests.post(URL, json=resume, headers=header, timeout=TIMEOUT)
     print("RESUME")
 
 def on_activate_skip():
-    requests.post(URL, json=skip, headers=header)
+    requests.post(URL, json=skip, headers=header, timeout=TIMEOUT)
     print("SKIP")
 
 def on_activate_summon():
-    requests.post(URL, json=summon, headers=header)
+    requests.post(URL, json=summon, headers=header, timeout=TIMEOUT)
     print("SUMMON")
 
 if __name__ == "__main__":
