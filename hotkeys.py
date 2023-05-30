@@ -59,5 +59,5 @@ if __name__ == "__main__":
         '<alt_gr>+<shift>+o': on_activate_resume,
         '<alt_gr>+<shift>+i': on_activate_skip,
         '<alt_gr>+<shift>+å': on_activate_summon,
-        '<alt_gr>+<shift>+<esc>': on_activate_fuckoff
+        '<alt_gr>+<shift>+q': on_activate_fuckoff
     }) as h: h.join()
