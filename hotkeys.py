@@ -1,12 +1,11 @@
 from pynput import keyboard
 import requests
+import sys
+import tomli
 
-URL = "***REMOVED***"
+URL = ""
 
-header = {
-    "authorization": "***REMOVED***",
-    "content-type": "application/json"
-}
+header = {}
 
 resume = {
     "content": "m!resume"
@@ -37,9 +36,20 @@ def on_activate_summon():
     requests.post(URL, json=summon, headers=header)
     print("SUMMON")
 
-with keyboard.GlobalHotKeys({
-    '<alt_gr>+p': on_activate_pause,
-    '<alt_gr>+o': on_activate_resume,
-    '<alt_gr>+i': on_activate_skip,
-    '<alt_gr>+å': on_activate_summon
-}) as h: h.join()
+if __name__ == "__main__":
+    try:
+        with open(sys.argv[1], "rb") as file:
+            settings = tomli.load(file)
+        for key, value in settings["header"].items():
+            header[key] = value
+        for _, value in settings["url"].items():
+            URL = value
+    except Exception:
+        raise Exception("Please provide proper settings.toml file.")
+
+    with keyboard.GlobalHotKeys({
+        '<alt_gr>+p': on_activate_pause,
+        '<alt_gr>+o': on_activate_resume,
+        '<alt_gr>+i': on_activate_skip,
+        '<alt_gr>+å': on_activate_summon
+    }) as h: h.join()
