@@ -1,10 +1,10 @@
-**Simple script to control Jockie Music discord bot**
+# Simple script to control Jockie Music discord bot
 
-Usage from command line:
+## Usage from command line:
 
-    python hotkeys.py pathtosettingsfile
+    python hotkeys.py settings.toml
 
-Settings file must be .toml and follow this syntax:
+## Settings file must be `.toml`, follow this syntax and can be named whatever:
 
     [url]
     URL = "https...."
@@ -12,3 +12,7 @@ Settings file must be .toml and follow this syntax:
     [header]
     "authorization" = "AUTHCODE"
     "content-type" = "application/json"
+
+## I recommend creating a shortcut with this target:
+
+    C:\Windows\System32\cmd.exe /c python Your\path\here\hotkeys.py Your\path\here\settings.toml
