@@ -1,6 +1,7 @@
 **Simple script to control Jockie Music discord bot**
 
-Usage from command line: python hotkeys.py pathtosettingsfile
+Usage from command line:
+    python hotkeys.py pathtosettingsfile
 
 Settings file must be .toml and follow this syntax:
 
