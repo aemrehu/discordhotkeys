@@ -7,10 +7,10 @@
 ## Settings file must be `.toml`, follow this syntax and can be named whatever:
 
     [url]
-    URL = "https...."
+    URL = "<THE CHANNEL URL WHERE COMMANDS ARE TO BE SENT>"
 
     [header]
-    "authorization" = "AUTHCODE"
+    "authorization" = "<YOUR DISCORD ACCOUNT AUTH CODE>"
     "content-type" = "application/json"
 
 ## Shortcut for easy running:
