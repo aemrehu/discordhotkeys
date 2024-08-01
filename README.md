@@ -18,3 +18,7 @@
 I recommend creating a Windows shortcut with this target:
 
     C:\Windows\System32\cmd.exe /c python Your\path\here\hotkeys.py Your\path\here\settings.toml
+
+## Known bugs
+
+- May repeat commands without input
